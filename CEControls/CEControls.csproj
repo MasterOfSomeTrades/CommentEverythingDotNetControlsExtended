@@ -42,6 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Display\DisplayGraphic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\DisplayGraphic.Designer.cs">
+      <DependentUpon>DisplayGraphic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display\DisplayGraphics.cs" />
+    <Compile Include="Display\ILabelledGraphic.cs" />
+    <Compile Include="Display\LabelledColoredCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Input\LabelledTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
