@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Display\Connector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Display\DisplayGraphic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -62,6 +65,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Display\DisplayGraphic.resx">
+      <DependentUpon>DisplayGraphic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Input\LabelledTextBox.resx">
       <DependentUpon>LabelledTextBox.cs</DependentUpon>
     </EmbeddedResource>

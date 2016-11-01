@@ -1,4 +1,6 @@
-﻿namespace CEControls.Display {
+﻿using System.Windows.Forms;
+
+namespace CEControls.Display {
     partial class DisplayGraphic {
         /// <summary> 
         /// Required designer variable.
@@ -23,8 +25,17 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // DisplayGraphic
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Name = "DisplayGraphic";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayGraphic_Paint);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
