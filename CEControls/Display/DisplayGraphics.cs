@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace CEControls.Display {
     public class DisplayGraphics {
-        private Control _canvas;
+        /*private Control _canvas;
 
         private DisplayGraphics() {
             // --- Must call constructor that defines a Control as the canvas
@@ -19,6 +19,6 @@ namespace CEControls.Display {
         public void Add(DisplayGraphic graphic) {
             _canvas.Controls.Add(graphic);
             graphic.Render();
-        }
+        }*/
     }
 }

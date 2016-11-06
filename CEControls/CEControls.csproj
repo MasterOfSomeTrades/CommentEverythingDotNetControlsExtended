@@ -42,20 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Display\CEDisplayFilledCircle.cs" />
     <Compile Include="Display\Connector.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Display\DisplayGraphic.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Display\DisplayGraphic.Designer.cs">
-      <DependentUpon>DisplayGraphic.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Display\DisplayGraphic.cs" />
     <Compile Include="Display\DisplayGraphics.cs" />
-    <Compile Include="Display\ILabelledGraphic.cs" />
-    <Compile Include="Display\LabelledColoredCircle.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Display\LabelledGraphic.cs" />
+    <Compile Include="Display\CEDisplayLabel.cs" />
     <Compile Include="Input\LabelledTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -65,9 +59,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Display\DisplayGraphic.resx">
-      <DependentUpon>DisplayGraphic.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Input\LabelledTextBox.resx">
       <DependentUpon>LabelledTextBox.cs</DependentUpon>
     </EmbeddedResource>

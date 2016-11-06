@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 
 namespace CEControls.Display {
-    public class Connector : DisplayGraphic {
+    public class Connector {// : DisplayGraphic {
         public Point p1 { get; set; }
         public Point p2 { get; set; }
 
-        public override void Render() {
+        /*public override void Render() {
             Graphics renderer = CreateGraphics();
 
             Top = p1.Y;
@@ -27,5 +27,9 @@ namespace CEControls.Display {
             renderer.DrawLine(Pens.Black, p1, p2);
             renderer.Dispose();
         }
+
+        public override void RenderOnCanvas() { // TEST
+            throw new NotImplementedException();
+        }*/
     }
 }

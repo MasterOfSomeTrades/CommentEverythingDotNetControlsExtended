@@ -8,18 +8,32 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace CEControls.Display {
-    public abstract partial class DisplayGraphic : UserControl {
+    public abstract partial class DisplayGraphic {
+        public Color Color { get; set; } = Color.Blue;
+        public int Left { get; set; } = 0;
+        public int Top { get; set; } = 0;
+        public int Width { get; set; } = 10;
+        public int Height { get; set; } = 10;
+        protected DisplayGraphic _parentDisplayGraphic;
+
+        //this.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayGraphic_Paint);
+
         public DisplayGraphic() {
-            InitializeComponent();
 
-            this.SetStyle(System.Windows.Forms.ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = System.Drawing.Color.Transparent;
         }
 
-        public abstract void Render();
+        public DisplayGraphic(DisplayGraphic displayGraphic) {
+            _parentDisplayGraphic = displayGraphic;
+            Left = _parentDisplayGraphic.Left;
+            Top = _parentDisplayGraphic.Top;
+            Width = _parentDisplayGraphic.Width;
+            Height = _parentDisplayGraphic.Height;
+        }
 
-        private void DisplayGraphic_Paint(object sender, EventArgs e) {
+        public abstract void Render(Control canvas);
+
+        /*protected void DisplayGraphic_Paint(object sender, EventArgs e) {
             Render();
-        }
+        }*/
     }
 }
