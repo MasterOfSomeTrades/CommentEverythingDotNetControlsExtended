@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace CEControls.Display {
     public class CEDisplayLabel : DisplayGraphic {
-        public string Text { get; set; } = "Test";
+        public string Text { get; set; } = "Undefined";
 
         public CEDisplayLabel(DisplayGraphic displayGraphic) : base(displayGraphic) {
         }
@@ -25,7 +25,7 @@ namespace CEControls.Display {
             strFormat.LineAlignment = StringAlignment.Center;
             //renderer.FillEllipse(circleBrush, drawingSpace);
             //circleBrush = new SolidBrush(LabelColor);
-            Font stringFont = new Font(FontFamily.GenericSerif, 12);
+            Font stringFont = new Font(FontFamily.GenericSansSerif, 10);
             renderer.DrawString(Text, stringFont, circleBrush, drawingSpace, strFormat);
             stringFont.Dispose();
             circleBrush.Dispose();
