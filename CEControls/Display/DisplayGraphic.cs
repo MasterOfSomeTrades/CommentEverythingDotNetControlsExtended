@@ -9,25 +9,35 @@ using System.Windows.Forms;
 
 namespace CEControls.Display {
     public abstract partial class DisplayGraphic {
+        protected DisplayGraphic _parentDisplayGraphic = null;
         public Color Color { get; set; } = Color.Blue;
-        public int Left { get; set; } = 0;
-        public int Top { get; set; } = 0;
-        public int Width { get; set; } = 10;
-        public int Height { get; set; } = 10;
-        protected DisplayGraphic _parentDisplayGraphic;
+        private int _left = 0;
+        public int Left {
+            get { if (_parentDisplayGraphic == null) return _left; else return _parentDisplayGraphic._left; }
+            set { if (_parentDisplayGraphic == null) _left = value; }
+        }
+        private int _top = 0;
+        public int Top {
+            get { if (_parentDisplayGraphic == null) return _top; else return _parentDisplayGraphic._top; }
+            set { if (_parentDisplayGraphic == null) _top = value; }
+        }
+        private int _width = 0;
+        public int Width {
+            get { if (_parentDisplayGraphic == null) return _width; else return _parentDisplayGraphic._width; }
+            set { if (_parentDisplayGraphic == null) _width = value; }
+        }
+        private int _height = 0;
+        public int Height {
+            get { if (_parentDisplayGraphic == null) return _height; else return _parentDisplayGraphic._height; }
+            set { if (_parentDisplayGraphic == null) _height = value; }
+        }
 
         //this.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayGraphic_Paint);
 
-        public DisplayGraphic() {
-
-        }
+        public DisplayGraphic() { }
 
         public DisplayGraphic(DisplayGraphic displayGraphic) {
             _parentDisplayGraphic = displayGraphic;
-            Left = _parentDisplayGraphic.Left;
-            Top = _parentDisplayGraphic.Top;
-            Width = _parentDisplayGraphic.Width;
-            Height = _parentDisplayGraphic.Height;
         }
 
         public abstract void Render(Control canvas);
