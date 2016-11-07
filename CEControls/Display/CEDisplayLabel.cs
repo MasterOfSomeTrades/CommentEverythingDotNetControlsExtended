@@ -8,6 +8,8 @@ using System.Windows.Forms;
 namespace CEControls.Display {
     public class CEDisplayLabel : DisplayGraphic {
         public string Text { get; set; } = "Undefined";
+        public FontFamily Font { get; set; } = FontFamily.GenericSansSerif;
+        public int TextSize { get; set; } = 10;
 
         public CEDisplayLabel(DisplayGraphic displayGraphic) : base(displayGraphic) {
         }
@@ -17,9 +19,19 @@ namespace CEControls.Display {
             Text = label;
         }
 
+        public CEDisplayLabel(Color labelColor, FontFamily labelFont, int labelSize, string label) : this(labelColor, label) {
+            Font = labelFont;
+            TextSize = labelSize;
+        }
+
         public CEDisplayLabel(DisplayGraphic displayGraphic, Color labelColor, string label) : base(displayGraphic) {
             Color = labelColor;
             Text = label;
+        }
+
+        public CEDisplayLabel(DisplayGraphic displayGraphic, Color labelColor, FontFamily labelFont, int labelSize, string label) : this(displayGraphic, labelColor, label) {
+            Font = labelFont;
+            TextSize = labelSize;
         }
 
         public override void Render(Control canvas) {
@@ -35,7 +47,7 @@ namespace CEControls.Display {
             strFormat.LineAlignment = StringAlignment.Center;
             //renderer.FillEllipse(circleBrush, drawingSpace);
             //circleBrush = new SolidBrush(LabelColor);
-            Font stringFont = new Font(FontFamily.GenericSansSerif, 10);
+            Font stringFont = new Font(Font, TextSize);
             renderer.DrawString(Text, stringFont, circleBrush, drawingSpace, strFormat);
             stringFont.Dispose();
             circleBrush.Dispose();
