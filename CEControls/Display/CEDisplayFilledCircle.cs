@@ -11,7 +11,22 @@ namespace CEControls.Display {
 
         }
 
-        public CEDisplayFilledCircle(DisplayGraphic displayGraphic) : base(displayGraphic) {
+        public CEDisplayFilledCircle(Color graphicColor, int left, int top, int width, int height) : base() {
+            Color = graphicColor;
+            Left = left;
+            Top = top;
+            Width = width;
+            Height = height;
+        }
+
+        public CEDisplayFilledCircle(DisplayGraphic displayGraphic) : base(displayGraphic) { }
+
+        public CEDisplayFilledCircle(DisplayGraphic displayGraphic, Color graphicColor, int left, int top, int width, int height) : base(displayGraphic) {
+            Color = graphicColor;
+            Left = left;
+            Top = top;
+            Width = width;
+            Height = height;
         }
 
         public override void Render(Control canvas) {

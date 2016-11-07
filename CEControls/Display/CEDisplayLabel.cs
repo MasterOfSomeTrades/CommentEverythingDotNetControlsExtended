@@ -12,6 +12,16 @@ namespace CEControls.Display {
         public CEDisplayLabel(DisplayGraphic displayGraphic) : base(displayGraphic) {
         }
 
+        public CEDisplayLabel(Color labelColor, string label) : base() {
+            Color = labelColor;
+            Text = label;
+        }
+
+        public CEDisplayLabel(DisplayGraphic displayGraphic, Color labelColor, string label) : base(displayGraphic) {
+            Color = labelColor;
+            Text = label;
+        }
+
         public override void Render(Control canvas) {
             if (_parentDisplayGraphic != null) {
                 _parentDisplayGraphic.Render(canvas);
